@@ -1,0 +1,17 @@
+<%=@menu_name%>
+<%@menu_items.all.each do |menu_item|%>
+  <p class="MenuItem-name">
+  <%=menu_item.to_clear_string%>
+  <%= form_with(url: "/menu_items/#{menu_item.id}", method: "delete") do%>
+    <input type="hidden" value= <%=@menu_id%> name="menu_id">
+    <%=image_submit_tag("trash-can-outline.svg")%>
+  <%end%>
+  </p>
+<%end%>
+<form action="/menu_items" method="post">
+ <input type="text" name="name">
+ <input type="text" name="description">
+ <input type="text" name="price">
+ <input type="hidden" value= <%=@menu_id%> name="menu_id">
+ <input type="submit" value="add">
+</form>

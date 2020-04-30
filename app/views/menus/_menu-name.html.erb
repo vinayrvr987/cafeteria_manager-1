@@ -1,0 +1,12 @@
+<%menus.all.each do |menu|%>
+<%=menu.name%>
+<%= form_with(url: "/menus/#{menu.id}", method: "delete") do%>
+    <input type="hidden" value= <%=@menu_id%> name="menu_id">
+    <%=image_submit_tag("trash-can-outline.svg")%>
+  <%end%>
+<form action ="/menu_items" method="get">
+  <input type ="hidden" value=<%=menu.id%> name="menu_id">
+  <input type="submit" value="additems">
+</form>
+
+<%end%>

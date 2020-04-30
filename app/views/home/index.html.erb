@@ -1,0 +1,25 @@
+<main>
+ <h1 class="Homepage-title">THIS IS CAFETERIA MANAGER</h1>
+ <div class="dropdown">
+      <p class="dropicon">Choose Your Title</p>
+        <%= form_with url:"/" do |form| %>
+        <div class="Form-section">
+            <%= form.submit "Costumer", class: "Form-submit"%>
+          </div>
+        <%end%>
+        <%= form_with url:"/" do |form| %>
+        <div class="Form-section">
+            <%= form.submit "Billingclerk", class: "Form-submit"%>
+          </div>
+        <%end%>
+        <%= form_with url:"/" do |form| %>
+        <div class="Form-section">
+            <%= form.submit "Owner", class: "Form-submit"%>
+          </div>
+        <%end%>
+ </div>
+</main>
+
+<form action ="/menus" method="get">
+  <input type="submit" value="menus">
+</form>

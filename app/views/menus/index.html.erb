@@ -1,0 +1,8 @@
+<%= render partial: "menu-name" , locals:
+       {
+        menus: Menu.all
+       }%>
+<form action ="/menus" method="post">
+   <input type ="text" name="name">
+   <input type="submit" value="add">
+</form>
